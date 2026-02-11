@@ -99,7 +99,7 @@
       // Bottom Bar
       + '<div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">'
       + '<div class="text-sm">&copy; ' + year + ' Balkos Industrieservice Germany GmbH. Alle Rechte vorbehalten.</div>'
-      + '<div class="text-sm">Made with <span class="heart-icon">&hearts;</span> by <a href="https://www.sighencea.com" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400 transition-colors">Sighencea</a></div>'
+      + '<div class="text-sm">Made with <span class="heart-icon">&hearts;</span> by <a href="https://www.sighencea.com" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:text-orange-300 transition-colors">Sighencea</a></div>'
       + '</div></div></footer>';
   }
 
