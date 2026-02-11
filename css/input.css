@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+@source "../*.html";
+@source "../js/*.js";
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Balkos Industrieservice - Custom Styles */
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-x: none;
+}
+
+/* Hide scrollbar for horizontal scroll gallery */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Bounce animation for scroll indicator */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Staggered fade in */
+.fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+.fade-in-delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+/* Hero background image */
+.hero-bg {
+  background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1600');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #f97316, #fb923c, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button gradient */
+.btn-gradient {
+  background: linear-gradient(to right, #f97316, #ea580c);
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, #ea580c, #c2410c);
+}
+
+/* Header glassmorphism */
+.header-glass {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Smooth page transitions */
+.page-transition {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Industry card hover effects */
+.industry-card {
+  transition: all 0.5s ease;
+}
+
+.industry-card:hover .industry-img {
+  transform: scale(1.1);
+}
+
+.industry-card:hover .industry-bar {
+  width: 8rem;
+}
+
+.industry-img {
+  transition: transform 0.7s ease;
+}
+
+.industry-bar {
+  transition: width 0.5s ease;
+}
+
+/* Service card hover */
+.service-card {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: #f97316;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+}
+
+.service-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Certificate card hover */
+.cert-card {
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: scale(1.05);
+}
+
+/* Project card hover */
+.project-card {
+  transition: border-color 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: #fb923c;
+}
+
+/* Gallery image hover */
+.gallery-img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile menu transition */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.mobile-menu.open {
+  max-height: 500px;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* Form input styles */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+}
+
+/* Select arrow styling */
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+/* Heart icon in footer */
+.heart-icon {
+  color: #ef4444;
+  display: inline;
+}
+
+/* Back to top button */
+#back-to-top {
+  transition: opacity 0.3s ease;
+}

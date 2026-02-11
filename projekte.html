@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekte – Balkos Industrieservice Germany GmbH</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white min-h-screen">
+
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Header -->
+    <section class="bg-slate-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl md:text-6xl font-black mb-6 tracking-tight">Projekte &amp; Referenzen</h1>
+          <p class="text-xl text-slate-300 font-light leading-relaxed mb-4">Ausgewählte Beispiele unserer industriellen Dienstleistungen und Projektunterstützung in verschiedenen Branchen.</p>
+          <p class="text-slate-400">Jedes Projekt wird mit demselben Engagement für Sicherheit, Qualität und termingerechte Ausführung durchgeführt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="bg-slate-50 py-8 border-b sticky top-16 z-40">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center space-x-2 mb-4">
+            <i data-lucide="filter" class="w-5 h-5 text-slate-600"></i>
+            <span class="font-semibold text-slate-700">Projekte filtern:</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <select id="service-filter" onchange="filterProjects()" class="form-input">
+              <option value="all">Alle Dienstleistungen</option>
+              <option value="Personalleasing">Personalleasing</option>
+              <option value="Anlagenwartung">Anlagenwartung</option>
+              <option value="Rohrleitungsbau">Rohrleitungsbau</option>
+              <option value="Shutdown">Shutdown &amp; Turnaround</option>
+            </select>
+            <select id="industry-filter" onchange="filterProjects()" class="form-input">
+              <option value="all">Alle Branchen</option>
+              <option value="Chemie">Chemieindustrie</option>
+              <option value="Petrochemie">Petrochemie</option>
+              <option value="Energie">Energie &amp; Versorgung</option>
+              <option value="Produktion">Industrieproduktion</option>
+            </select>
+          </div>
+          <p id="project-count" class="text-sm text-slate-600 mt-4">6 Projekte gefunden</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Listing -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto space-y-8">
+
+          <!-- Project 1 -->
+          <div class="project-card border border-slate-200 p-6 md:p-8 rounded-lg" data-service="Anlagenwartung" data-industry="Chemie">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">Chemieindustrie</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Anlagenwartung</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Langzeitvertrag</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Instandhaltungsunterstützung – Chemieanlage</h3>
+            <p class="text-slate-600 mb-6 leading-relaxed">Bereitstellung qualifizierten Personals und Wartungsunterstützung für laufenden Anlagenbetrieb.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <h4 class="font-semibold text-slate-800 mb-3">Verantwortlichkeiten</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Einsatz von Arbeitskräften</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Durchführung von Instandhaltungsarbeiten</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Koordination mit Kundenteams</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Einhaltung der Standortanforderungen</span></li>
+                </ul>
+              </div>
+              <div>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <h4 class="font-semibold text-slate-800 mb-2">Ergebnis</h4>
+                  <p class="text-slate-600 text-sm leading-relaxed">Dienstleistungen entsprechend Betriebsplänen und Sicherheitsanforderungen erbracht.</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <a href="leistungen.html" class="text-orange-500 hover:text-orange-600 font-semibold text-sm inline-flex items-center transition-colors">Mehr über Anlagenwartung <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+              <a href="kontakt.html" class="text-slate-500 hover:text-slate-700 font-semibold text-sm inline-flex items-center transition-colors">Projekt besprechen <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card border border-slate-200 p-6 md:p-8 rounded-lg" data-service="Shutdown" data-industry="Petrochemie">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">Petrochemie</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Shutdown &amp; Turnaround</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Projektbasiert</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Shutdown-Unterstützung – Petrochemische Anlage</h3>
+            <p class="text-slate-600 mb-6 leading-relaxed">Bereitstellung von Personal und Unterstützung während eines geplanten Anlagenstillstands.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <h4 class="font-semibold text-slate-800 mb-3">Verantwortlichkeiten</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Schnelle Personalskalierung</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Mechanische und Wartungsarbeiten</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Strikte Zeitplanverwaltung</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Sicherheitsprotokollkonformität</span></li>
+                </ul>
+              </div>
+              <div>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <h4 class="font-semibold text-slate-800 mb-2">Ergebnis</h4>
+                  <p class="text-slate-600 text-sm leading-relaxed">Projekt innerhalb des Zeitrahmens und gemäß Kundenspezifikationen abgeschlossen.</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <a href="leistungen.html" class="text-orange-500 hover:text-orange-600 font-semibold text-sm inline-flex items-center transition-colors">Mehr über Shutdown-Service <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+              <a href="kontakt.html" class="text-slate-500 hover:text-slate-700 font-semibold text-sm inline-flex items-center transition-colors">Projekt besprechen <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card border border-slate-200 p-6 md:p-8 rounded-lg" data-service="Rohrleitungsbau" data-industry="Energie">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">Energie &amp; Versorgung</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Rohrleitungsbau</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Projektbasiert</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Rohrleitungsmodifikation – Energieanlage</h3>
+            <p class="text-slate-600 mb-6 leading-relaxed">Modifikation und Erweiterung bestehender Rohrleitungssysteme während des Anlagenbetriebs.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <h4 class="font-semibold text-slate-800 mb-3">Verantwortlichkeiten</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Detaillierte Planung und Koordination</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Fertigung und Installation</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Integration in bestehende Systeme</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Vollständige Dokumentation</span></li>
+                </ul>
+              </div>
+              <div>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <h4 class="font-semibold text-slate-800 mb-2">Ergebnis</h4>
+                  <p class="text-slate-600 text-sm leading-relaxed">Arbeiten ohne Betriebsunterbrechung mit vollständiger Konformitätsdokumentation abgeschlossen.</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <a href="leistungen.html" class="text-orange-500 hover:text-orange-600 font-semibold text-sm inline-flex items-center transition-colors">Mehr über Rohrleitungsbau <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+              <a href="kontakt.html" class="text-slate-500 hover:text-slate-700 font-semibold text-sm inline-flex items-center transition-colors">Projekt besprechen <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card border border-slate-200 p-6 md:p-8 rounded-lg" data-service="Personalleasing" data-industry="Produktion">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">Industrieproduktion</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Personalleasing</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Langzeitvertrag</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Personalleasing – Industrieproduktion</h3>
+            <p class="text-slate-600 mb-6 leading-relaxed">Bereitstellung qualifizierter Produktions- und Wartungstechniker für kontinuierliche Betriebsunterstützung.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <h4 class="font-semibold text-slate-800 mb-3">Verantwortlichkeiten</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Mehrjährige Personalsupplementierung</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Technische und mechanische Rollen</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Laufendes Training und Entwicklung</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Qualitätssicherung</span></li>
+                </ul>
+              </div>
+              <div>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <h4 class="font-semibold text-slate-800 mb-2">Ergebnis</h4>
+                  <p class="text-slate-600 text-sm leading-relaxed">Konsistente, qualitativ hochwertige Personalunterstützung über die gesamte Vertragslaufzeit.</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <a href="leistungen.html" class="text-orange-500 hover:text-orange-600 font-semibold text-sm inline-flex items-center transition-colors">Mehr über Personalleasing <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+              <a href="kontakt.html" class="text-slate-500 hover:text-slate-700 font-semibold text-sm inline-flex items-center transition-colors">Projekt besprechen <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card border border-slate-200 p-6 md:p-8 rounded-lg" data-service="Shutdown" data-industry="Chemie">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">Chemieindustrie</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Shutdown &amp; Turnaround</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Projektbasiert</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Turnaround-Koordination – Chemieanlage</h3>
+            <p class="text-slate-600 mb-6 leading-relaxed">Umfassende Personalbereitstellung und Koordination für großen Anlagen-Turnaround.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <h4 class="font-semibold text-slate-800 mb-3">Verantwortlichkeiten</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Über 50 qualifizierte Fachkräfte mobilisiert</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Multidisziplinäre Arbeitspakete</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Enge Kundenkoordination</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Sicherheits- und Zeitplanfokus</span></li>
+                </ul>
+              </div>
+              <div>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <h4 class="font-semibold text-slate-800 mb-2">Ergebnis</h4>
+                  <p class="text-slate-600 text-sm leading-relaxed">Turnaround erfolgreich und sicher innerhalb des geplanten Zeitrahmens abgeschlossen.</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <a href="leistungen.html" class="text-orange-500 hover:text-orange-600 font-semibold text-sm inline-flex items-center transition-colors">Mehr über Shutdown-Service <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+              <a href="kontakt.html" class="text-slate-500 hover:text-slate-700 font-semibold text-sm inline-flex items-center transition-colors">Projekt besprechen <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card border border-slate-200 p-6 md:p-8 rounded-lg" data-service="Anlagenwartung" data-industry="Petrochemie">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">Petrochemie</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Anlagenwartung</span>
+              <span class="inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Langzeitvertrag</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Wartungsprogramm – Petrochemische Anlage</h3>
+            <p class="text-slate-600 mb-6 leading-relaxed">Laufende vorbeugende und reaktive Wartungsunterstützung für kritische Produktionsanlagen.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <h4 class="font-semibold text-slate-800 mb-3">Verantwortlichkeiten</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Geplante Wartungszyklen</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Notfall-Reaktionsfähigkeit</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Ersatzteilmanagement</span></li>
+                  <li class="flex items-start space-x-2"><i data-lucide="check-circle" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><span class="text-slate-600 text-sm">Betriebliche Berichterstattung</span></li>
+                </ul>
+              </div>
+              <div>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <h4 class="font-semibold text-slate-800 mb-2">Ergebnis</h4>
+                  <p class="text-slate-600 text-sm leading-relaxed">Reduzierte Ausfallzeiten und verbesserte Anlagenverfügbarkeit über die Vertragslaufzeit.</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <a href="leistungen.html" class="text-orange-500 hover:text-orange-600 font-semibold text-sm inline-flex items-center transition-colors">Mehr über Anlagenwartung <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+              <a href="kontakt.html" class="text-slate-500 hover:text-slate-700 font-semibold text-sm inline-flex items-center transition-colors">Projekt besprechen <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Execution Statement -->
+    <section class="bg-slate-50 py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Konsistente Ausführung über alle Projekte</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="flex items-start space-x-3">
+              <i data-lucide="check-circle" class="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5"></i>
+              <span class="text-slate-700 font-medium">Qualifiziertes und zertifiziertes Personal</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i data-lucide="check-circle" class="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5"></i>
+              <span class="text-slate-700 font-medium">Sicherheitsorientierte Arbeitsausführung</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i data-lucide="check-circle" class="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5"></i>
+              <span class="text-slate-700 font-medium">Termingerechte Projektabwicklung</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i data-lucide="check-circle" class="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5"></i>
+              <span class="text-slate-700 font-medium">Vollständige Dokumentation und Nachverfolgbarkeit</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i data-lucide="check-circle" class="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5"></i>
+              <span class="text-slate-700 font-medium">Einhaltung aller regulatorischen Anforderungen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance -->
+    <section class="bg-slate-800 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Compliance &amp; Zertifizierungen</h2>
+          <p class="text-slate-300 mb-8 text-lg font-light leading-relaxed">Alle Projekte werden unter Einhaltung geltender Sicherheits-, Qualitäts- und Industriestandards durchgeführt. Unsere Zertifizierungen belegen unser Engagement für höchste Ausführungsqualität.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="zertifikate.html" class="btn-gradient text-white px-8 py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-orange-500/30 inline-flex items-center justify-center">Zertifikate ansehen <i data-lucide="chevron-right" class="w-5 h-5 ml-2"></i></a>
+            <a href="leistungen.html" class="border-2 border-white hover:bg-white hover:text-slate-800 text-white px-8 py-3 rounded-lg font-bold transition-all transform hover:scale-105 inline-flex items-center justify-center">Leistungen ansehen <i data-lucide="chevron-right" class="w-5 h-5 ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Primary CTA -->
+    <section class="bg-slate-900 py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">Suchen Sie einen zuverlässigen Industriepartner?</h2>
+          <p class="text-xl text-slate-400 mb-10 font-light leading-relaxed">Teilen Sie uns Ihr Projekt oder Ihren Personalbedarf mit. Wir reagieren schnell und professionell.</p>
+          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <a href="kontakt.html" class="btn-gradient text-white px-10 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 shadow-2xl shadow-orange-500/50 text-center">Angebot anfragen</a>
+            <a href="kontakt.html" class="border-2 border-white hover:bg-white hover:text-slate-900 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 text-center">Kontakt aufnehmen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

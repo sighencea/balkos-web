@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(npx tailwindcss:*)",
+      "Bash(npx @tailwindcss/cli:*)"
+    ]
+  }
+}

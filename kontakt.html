@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Balkos Industrieservice Germany GmbH</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white min-h-screen">
+
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- 1. Page Header -->
+    <section class="bg-slate-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">Kontakt</h1>
+          <p class="text-xl text-slate-300 font-light leading-relaxed">Sprechen Sie mit uns über Ihr Projekt, Ihren Personalbedarf oder Ihre industriellen Anforderungen. Wir reagieren schnell und professionell.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Contact Routing -->
+    <section class="bg-slate-50 py-12 border-b border-slate-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center">Wie können wir helfen?</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Left card: Industrial Services -->
+            <div class="bg-white border-2 border-slate-200 hover:border-orange-400 rounded-lg p-6 transition-all">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Industrielle Dienstleistungen &amp; Personalanfragen</h3>
+              <p class="text-slate-600 mb-4 leading-relaxed">Sie benötigen qualifiziertes Personal, Instandhaltung, Rohrleitungsbau oder Shutdown-Unterstützung? Teilen Sie uns Ihren Bedarf mit.</p>
+              <p class="text-orange-500 font-semibold inline-flex items-center"><i data-lucide="chevron-right" class="w-5 h-5 mr-1"></i> Formular unten ausfüllen</p>
+            </div>
+            <!-- Right card: Careers -->
+            <a href="karriere.html" class="bg-white border-2 border-slate-200 hover:border-orange-400 rounded-lg p-6 transition-all block group">
+              <div class="flex items-center mb-2">
+                <i data-lucide="briefcase" class="w-6 h-6 text-orange-500 mr-3"></i>
+                <h3 class="text-lg font-bold text-slate-900 group-hover:text-orange-600 transition-colors">Bewerbungen</h3>
+              </div>
+              <p class="text-slate-600 mb-4 leading-relaxed">Sie suchen eine Stelle im Industriebereich? Informieren Sie sich über aktuelle Möglichkeiten und bewerben Sie sich direkt.</p>
+              <span class="text-orange-500 font-semibold inline-flex items-center group-hover:text-orange-600 transition-colors">Zur Karriereseite <i data-lucide="chevron-right" class="w-5 h-5 ml-1"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Enquiry Form -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 text-center">Industrieunterstützung anfragen</h2>
+          <p class="text-lg text-slate-600 mb-10 text-center font-light leading-relaxed">Füllen Sie das folgende Formular aus und wir melden uns zeitnah bei Ihnen.</p>
+
+          <form onsubmit="handleContactSubmit(event)" class="space-y-6">
+            <!-- 2-col grid inputs -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="company" class="block text-sm font-semibold text-slate-700 mb-2">Firmenname *</label>
+                <input type="text" id="company" name="company" required placeholder="Ihre Firma" class="form-input">
+              </div>
+              <div>
+                <label for="contact-person" class="block text-sm font-semibold text-slate-700 mb-2">Ansprechpartner *</label>
+                <input type="text" id="contact-person" name="contact-person" required placeholder="Ihr Name" class="form-input">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">E-Mail-Adresse *</label>
+                <input type="email" id="email" name="email" required placeholder="ihre.email@firma.de" class="form-input">
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-semibold text-slate-700 mb-2">Telefonnummer</label>
+                <input type="tel" id="phone" name="phone" placeholder="+49 ..." class="form-input">
+              </div>
+              <div>
+                <label for="industry" class="block text-sm font-semibold text-slate-700 mb-2">Branche</label>
+                <select id="industry" name="industry" class="form-input">
+                  <option value="">Bitte wählen</option>
+                  <option value="chemie">Chemieindustrie</option>
+                  <option value="petrochemie">Petrochemie</option>
+                  <option value="energie">Energie &amp; Versorgung</option>
+                  <option value="produktion">Industrieproduktion</option>
+                  <option value="andere">Andere</option>
+                </select>
+              </div>
+              <div>
+                <label for="service-type" class="block text-sm font-semibold text-slate-700 mb-2">Dienstleistungsart</label>
+                <select id="service-type" name="service-type" class="form-input">
+                  <option value="">Bitte wählen</option>
+                  <option value="personalleasing">Personalleasing</option>
+                  <option value="wartung">Anlagenwartung</option>
+                  <option value="rohrleitungsbau">Rohrleitungsbau</option>
+                  <option value="shutdown">Shutdown &amp; Turnaround</option>
+                  <option value="mehrere">Mehrere Dienstleistungen</option>
+                </select>
+              </div>
+              <div>
+                <label for="location" class="block text-sm font-semibold text-slate-700 mb-2">Projektstandort</label>
+                <input type="text" id="location" name="location" placeholder="Stadt / Region" class="form-input">
+              </div>
+              <div>
+                <label for="start-date" class="block text-sm font-semibold text-slate-700 mb-2">Voraussichtlicher Starttermin</label>
+                <input type="date" id="start-date" name="start-date" class="form-input">
+              </div>
+            </div>
+
+            <!-- Full width textarea -->
+            <div>
+              <label for="message" class="block text-sm font-semibold text-slate-700 mb-2">Kurzbeschreibung des Bedarfs</label>
+              <textarea id="message" name="message" rows="6" placeholder="Beschreiben Sie bitte Ihr Projekt oder Ihren Personalbedarf..." class="form-input"></textarea>
+            </div>
+
+            <!-- Privacy note -->
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+              <p class="text-sm text-slate-600">Ihre Informationen werden nur zur Beantwortung Ihrer Anfrage verwendet.</p>
+            </div>
+
+            <!-- Submit button -->
+            <div class="text-center">
+              <button type="submit" class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+                <i data-lucide="send" class="w-5 h-5 mr-2"></i> Anfrage Senden
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Direct Contact -->
+    <section class="bg-slate-50 py-16 border-t border-slate-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-10 text-center">Direkter Kontakt</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <!-- Phone -->
+            <div class="bg-white border border-slate-200 rounded-lg p-6 text-center">
+              <div class="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="phone" class="w-7 h-7 text-white"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Telefon</h3>
+              <a href="tel:+4986715077600" class="text-orange-500 hover:text-orange-600 font-medium transition-colors block">+49 8671 507 7600</a>
+              <a href="tel:+4986715077601" class="text-orange-500 hover:text-orange-600 font-medium transition-colors block">+49 8671 507 7601</a>
+              <p class="text-slate-500 text-sm mt-1">Fax: +49 8671 507 0688</p>
+            </div>
+            <!-- Email -->
+            <div class="bg-white border border-slate-200 rounded-lg p-6 text-center">
+              <div class="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="mail" class="w-7 h-7 text-white"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">E-Mail</h3>
+              <a href="mailto:info@balkos-service.de" class="text-orange-500 hover:text-orange-600 font-medium transition-colors">info@balkos-service.de</a>
+            </div>
+            <!-- Address -->
+            <div class="bg-white border border-slate-200 rounded-lg p-6 text-center">
+              <div class="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="map-pin" class="w-7 h-7 text-white"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Adresse</h3>
+              <p class="text-slate-600">Simbacher Straße 35,<br>84524 Neuötting,<br>Deutschland</p>
+            </div>
+          </div>
+          <div class="bg-white border border-slate-200 rounded-lg p-4 text-center">
+            <p class="text-sm text-slate-600">Für dringende oder zeitkritische Anfragen kontaktieren Sie uns bitte direkt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Company Info -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center">Unternehmensinformationen</h2>
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+            <div class="space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-start">
+                <span class="text-sm font-semibold text-slate-500 sm:w-48 flex-shrink-0 mb-1 sm:mb-0">Firmenname</span>
+                <span class="text-slate-900 font-medium">Balkos Industrieservice Germany GmbH</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-start">
+                <span class="text-sm font-semibold text-slate-500 sm:w-48 flex-shrink-0 mb-1 sm:mb-0">Registrierte Adresse</span>
+                <span class="text-slate-900">Simbacher Straße 35, 84524 Neuötting, Deutschland</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-start">
+                <span class="text-sm font-semibold text-slate-500 sm:w-48 flex-shrink-0 mb-1 sm:mb-0">Telefon</span>
+                <span class="text-slate-900">+49 8671 507 7600 / +49 8671 507 7601</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-start">
+                <span class="text-sm font-semibold text-slate-500 sm:w-48 flex-shrink-0 mb-1 sm:mb-0">Fax</span>
+                <span class="text-slate-900">+49 8671 507 0688</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-start">
+                <span class="text-sm font-semibold text-slate-500 sm:w-48 flex-shrink-0 mb-1 sm:mb-0">E-Mail</span>
+                <span class="text-slate-900">info@balkos-service.de</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-start">
+                <span class="text-sm font-semibold text-slate-500 sm:w-48 flex-shrink-0 mb-1 sm:mb-0">Registergericht</span>
+                <span class="text-slate-900">Amtsgericht Traunstein</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-start">
+                <span class="text-sm font-semibold text-slate-500 sm:w-48 flex-shrink-0 mb-1 sm:mb-0">Registernummer</span>
+                <span class="text-slate-900">HRB 30435</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-start">
+                <span class="text-sm font-semibold text-slate-500 sm:w-48 flex-shrink-0 mb-1 sm:mb-0">USt-IdNr.</span>
+                <span class="text-slate-900">DE349975375</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-start">
+                <span class="text-sm font-semibold text-slate-500 sm:w-48 flex-shrink-0 mb-1 sm:mb-0">Geschäftsführer</span>
+                <span class="text-slate-900">Liviu-Alin Pop</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-start">
+                <span class="text-sm font-semibold text-slate-500 sm:w-48 flex-shrink-0 mb-1 sm:mb-0">Prokura</span>
+                <span class="text-slate-900">Alin-Ioan Bildea</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. What Happens Next -->
+    <section class="bg-slate-50 py-16 border-t border-slate-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-10 text-center">Was passiert nach Ihrer Kontaktaufnahme</h2>
+          <div class="space-y-8">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0 mr-6">1</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-1">Überprüfung Ihrer Anfrage</h3>
+                <p class="text-slate-600">Wir prüfen Ihre Angaben und verstehen Ihren Bedarf.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0 mr-6">2</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-1">Klärung von Umfang und Anforderungen</h3>
+                <p class="text-slate-600">Bei Bedarf klären wir Details zu Projektumfang und Spezifikationen.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0 mr-6">3</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-1">Bestätigung der Verfügbarkeit</h3>
+                <p class="text-slate-600">Wir prüfen unsere Ressourcen und bestätigen die Verfügbarkeit.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0 mr-6">4</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-1">Angebot oder nächste Schritte</h3>
+                <p class="text-slate-600">Sie erhalten ein konkretes Angebot oder wir besprechen die nächsten Schritte.</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-center text-slate-500 mt-10 font-medium">Klare Kommunikation vom ersten Kontakt an.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Reinforcement -->
+    <section class="bg-slate-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="text-xl text-slate-300 mb-8 font-light">Erfahren in regulierten Industrieumgebungen.</p>
+          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <a href="leistungen.html" class="text-orange-400 hover:text-orange-300 font-bold inline-flex items-center transition-colors">Leistungen <i data-lucide="chevron-right" class="w-5 h-5 ml-1"></i></a>
+            <a href="branchen.html" class="text-orange-400 hover:text-orange-300 font-bold inline-flex items-center transition-colors">Branchen <i data-lucide="chevron-right" class="w-5 h-5 ml-1"></i></a>
+            <a href="zertifikate.html" class="text-orange-400 hover:text-orange-300 font-bold inline-flex items-center transition-colors">Zertifikate &amp; Compliance <i data-lucide="chevron-right" class="w-5 h-5 ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
