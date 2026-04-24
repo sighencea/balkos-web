@@ -254,11 +254,12 @@ select.form-input {
   transition: opacity 0.3s ease;
 }
 
-/* When an h1 has stacked block-level span lines that can exceed the
-   container width (e.g. the hero headline), Chromium aligns the overflow
-   line to the inline-start edge even with text-align:center. Flex with
-   align-items:center centers the overflow symmetrically. */
-h1:has(> .block) {
+/* Chromium aligns overflowing single-line text to the inline-start edge
+   under text-align:center. Flex with align-items:center restores symmetric
+   overflow for large headings (e.g. the hero "DIENSTLEISTUNGEN" and the
+   CTA "INDUSTRIEUNTERSTÜTZUNG?" lines that exceed their container width). */
+.text-center > h1,
+.text-center > h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
