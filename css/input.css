@@ -16,6 +16,10 @@
 
 html {
   scroll-behavior: smooth;
+  /* Reserve scrollbar space on both sides so horizontally-centered content
+     stays visually centered in the viewport regardless of whether the
+     vertical scrollbar is present. */
+  scrollbar-gutter: stable both-edges;
 }
 
 body {
