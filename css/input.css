@@ -363,8 +363,32 @@ html[data-theme="light"] .hover\:bg-white:hover { background-color: #0f172a; }
 html[data-theme="light"] .hover\:bg-slate-900:hover { background-color: #f1f5f9; }
 html[data-theme="light"] .hover\:text-black:hover { color: #ffffff; }
 
-/* Keep the btn-gradient button readable (orange fill stays; text on it stays white) */
-html[data-theme="light"] .btn-gradient { color: #ffffff; }
+/* Elements with a strong blue background (400–950) and their descendants
+   keep white text/icons in light mode. Without this, the global
+   .text-white → slate-900 remap would produce dark text on blue buttons
+   and icon tiles (btn-gradient, bg-orange-500, etc.). Light variants
+   (50–300) are excluded — those pair with darker text by design.
+
+   The :not() on the descendant selector has two purposes:
+   1. Raises specificity to (0,3,1), above the (0,2,1) of .text-white's
+      light-mode remap — so we don't depend on stylesheet order.
+   2. Excludes elements that start their own light-background visual
+      context (e.g. a white button inside a blue section), so those
+      keep their own text colors instead of going white-on-white. */
+html[data-theme="light"] :is(.bg-orange-400, .bg-orange-500, .bg-orange-600, .bg-orange-700, .bg-orange-800, .bg-orange-900, .bg-orange-950, .btn-gradient) {
+  color: #ffffff;
+}
+html[data-theme="light"] :is(.bg-orange-400, .bg-orange-500, .bg-orange-600, .bg-orange-700, .bg-orange-800, .bg-orange-900, .bg-orange-950, .btn-gradient) *:not(.bg-white):not(.bg-slate-50):not(.bg-slate-100):not(.bg-slate-200):not(.bg-orange-50):not(.bg-orange-100):not(.bg-orange-200):not(.bg-orange-300) {
+  color: #ffffff;
+}
+
+/* Same treatment for hover states that swap in a blue background */
+html[data-theme="light"] :is(.hover\:bg-orange-400, .hover\:bg-orange-500, .hover\:bg-orange-600, .hover\:bg-orange-700):hover {
+  color: #ffffff;
+}
+html[data-theme="light"] :is(.hover\:bg-orange-400, .hover\:bg-orange-500, .hover\:bg-orange-600, .hover\:bg-orange-700):hover *:not(.bg-white):not(.bg-slate-50):not(.bg-slate-100):not(.bg-slate-200):not(.bg-orange-50):not(.bg-orange-100):not(.bg-orange-200):not(.bg-orange-300) {
+  color: #ffffff;
+}
 
 /* Header glass effect on light hero */
 html[data-theme="light"] .header-glass { background: rgba(255, 255, 255, 0.55); }
