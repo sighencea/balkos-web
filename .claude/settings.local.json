@@ -9,7 +9,8 @@
       "Bash(python3 -m http.server 8765 --bind 127.0.0.1)",
       "Bash(echo \"started pid=$!\")",
       "Bash(curl -s -o /dev/null -w \"status=%{http_code}\\\\n\" http://127.0.0.1:8765/index.html)",
-      "Bash(pkill -f \"http.server 8765\")"
+      "Bash(pkill -f \"http.server 8765\")",
+      "Bash(python3 *)"
     ]
   }
 }

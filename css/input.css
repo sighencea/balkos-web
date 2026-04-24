@@ -5,6 +5,22 @@
 
 @theme {
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Brand primary — mapped onto the Tailwind "orange" palette so every
+     existing bg-orange-*, text-orange-*, border-orange-*, shadow-orange-*
+     utility across the markup uses the Balkos logo blue. Palette anchored
+     on #007EC5 (sampled from the SERVICE wordmark). */
+  --color-orange-50: #eff8fd;
+  --color-orange-100: #d9eefb;
+  --color-orange-200: #b6ddf7;
+  --color-orange-300: #80c5ef;
+  --color-orange-400: #43a8e2;
+  --color-orange-500: #007ec5;
+  --color-orange-600: #006ba7;
+  --color-orange-700: #005786;
+  --color-orange-800: #0a476c;
+  --color-orange-900: #0d3b5a;
+  --color-orange-950: #082540;
 }
 
 /* Balkos Industrieservice - Custom Styles */
@@ -87,7 +103,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(to right, #f97316, #fb923c, #f59e0b);
+  background: linear-gradient(to right, #007ec5, #43a8e2, #80c5ef);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -95,11 +111,11 @@ body {
 
 /* Button gradient */
 .btn-gradient {
-  background: linear-gradient(to right, #f97316, #ea580c);
+  background: linear-gradient(to right, #007ec5, #006ba7);
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(to right, #ea580c, #c2410c);
+  background: linear-gradient(to right, #006ba7, #005786);
 }
 
 /* Header glassmorphism */
@@ -141,7 +157,7 @@ body {
 }
 
 .service-card:hover {
-  border-color: #f97316;
+  border-color: #007ec5;
 }
 
 .service-card:hover .service-icon {
@@ -167,7 +183,7 @@ body {
 }
 
 .project-card:hover {
-  border-color: #fb923c;
+  border-color: #43a8e2;
 }
 
 /* Gallery image hover */
@@ -196,7 +212,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #f97316;
+  outline: 2px solid #007ec5;
   outline-offset: 2px;
 }
 
@@ -213,8 +229,8 @@ textarea:focus-visible {
 
 .form-input:focus {
   outline: none;
-  border-color: #f97316;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+  border-color: #007ec5;
+  box-shadow: 0 0 0 3px rgba(0, 126, 197, 0.2);
 }
 
 /* Select arrow styling */
@@ -236,6 +252,16 @@ select.form-input {
 /* Back to top button */
 #back-to-top {
   transition: opacity 0.3s ease;
+}
+
+/* When an h1 has stacked block-level span lines that can exceed the
+   container width (e.g. the hero headline), Chromium aligns the overflow
+   line to the inline-start edge even with text-align:center. Flex with
+   align-items:center centers the overflow symmetrically. */
+h1:has(> .block) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ==========================================================================
@@ -368,9 +394,9 @@ html[data-theme="dark"] select.form-input {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .theme-toggle:hover {
-  color: #f97316;
-  border-color: #f97316;
-  background-color: rgba(249, 115, 22, 0.08);
+  color: #007ec5;
+  border-color: #007ec5;
+  background-color: rgba(0, 126, 197, 0.08);
 }
 .theme-toggle .theme-icon-sun { display: none; }
 .theme-toggle .theme-icon-moon { display: inline-block; }
