@@ -30,6 +30,11 @@
       return '<a href="' + item.href + '" class="nav-link block text-left px-2 py-2 text-sm font-semibold hover:text-orange-500 transition-colors ' + active + '">' + item.label + '</a>';
     }).join('');
 
+    var themeToggle = '<button type="button" onclick="toggleTheme()" class="theme-toggle" aria-label="Theme umschalten" title="Theme umschalten">'
+      + '<i data-lucide="moon" class="theme-icon-moon w-5 h-5"></i>'
+      + '<i data-lucide="sun" class="theme-icon-sun w-5 h-5"></i>'
+      + '</button>';
+
     return '<header class="bg-white text-slate-900 fixed top-0 left-0 w-full z-50 border-b border-slate-200 shadow-sm">'
       + '<div class="container mx-auto px-4">'
       + '<div class="flex items-center justify-between h-16">'
@@ -40,10 +45,14 @@
       + '<div class="hidden lg:flex items-center space-x-4">'
       + '<a href="tel:+4986715077600" class="flex items-center space-x-2 text-sm text-slate-700 hover:text-orange-500 transition-colors font-medium">'
       + '<i data-lucide="phone" class="w-4 h-4"></i><span>+49 8671 507 7600</span></a>'
+      + themeToggle
       + '<a href="kontakt.html" class="btn-gradient text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50">ANGEBOT ANFRAGEN</a>'
       + '</div>'
-      + '<button onclick="toggleMobileMenu()" id="mobile-menu-btn" class="lg:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors text-slate-700">'
+      + '<div class="flex items-center space-x-2 lg:hidden">'
+      + themeToggle
+      + '<button onclick="toggleMobileMenu()" id="mobile-menu-btn" class="p-2 hover:bg-slate-100 rounded-lg transition-colors text-slate-700">'
       + '<i data-lucide="menu" class="w-6 h-6"></i></button>'
+      + '</div>'
       + '</div>'
       + '<div id="mobile-menu" class="mobile-menu lg:hidden border-t border-slate-200">'
       + '<nav class="flex flex-col space-y-3 py-4">'
@@ -102,6 +111,16 @@
       + '<div class="text-sm">Made with <span class="heart-icon">&hearts;</span> by <a href="https://www.sighencea.com" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:text-orange-300 transition-colors">Sighencea</a></div>'
       + '</div></div></footer>';
   }
+
+  // Theme toggle (light / dark). The initial theme is set by the inline
+  // bootstrap script in each page's <head> before first paint.
+  window.toggleTheme = function () {
+    var root = document.documentElement;
+    var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('balkos-theme', next); } catch (e) {}
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  };
 
   // Mobile menu toggle
   window.toggleMobileMenu = function () {
