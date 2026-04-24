@@ -269,12 +269,20 @@ select.form-input {
 
 /* Chromium aligns overflowing single-line text to the inline-start edge
    under text-align:center. Flex with align-items:center restores symmetric
-   overflow for large headings (e.g. the hero "DIENSTLEISTUNGEN" and the
-   CTA "INDUSTRIEUNTERSTÜTZUNG?" lines that exceed their container width).
-   Only apply this on ≥640px — below that we want the text to wrap to fit
-   the narrow viewport, which requires a regular block container. */
+   overflow for large headings that exceed the container width.
+
+   h1 lines use whitespace-nowrap (hero headline must never wrap), so we
+   need flex centering at every breakpoint — otherwise an overflowing
+   nowrap line would sit against the left edge on mobile.
+
+   h2 is gated to ≥640px so smaller screens fall back to a normal block,
+   letting long headings (e.g. the CTA copy) wrap at word boundaries. */
+.text-center > h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media (min-width: 640px) {
-  .text-center > h1,
   .text-center > h2 {
     display: flex;
     flex-direction: column;
