@@ -39,7 +39,7 @@
       + '<div class="container mx-auto px-4">'
       + '<div class="flex items-center justify-between h-16">'
       + '<a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">'
-      + '<img src="assets/Balkos-Service-Logo.jpg" alt="Balkos Service Logo" class="h-9">'
+      + '<img src="assets/Balkos-Service-Logo.jpg" alt="Balkos Service Logo" class="h-7 sm:h-9">'
       + '</a>'
       + '<nav class="hidden lg:flex items-center space-x-6">' + desktopNav + '</nav>'
       + '<div class="hidden lg:flex items-center space-x-4">'

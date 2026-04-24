@@ -45,6 +45,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior-x: none;
+  /* Prevent horizontal scroll on narrow viewports if a heading's overflow
+     still extends beyond the section's clipping box (e.g. fallback when
+     overflow-hidden on an ancestor isn't enough). */
+  overflow-x: clip;
+}
+
+/* Long German compound words (Industrieunterstützung, Dienstleistungen, …)
+   can exceed narrow viewports even after responsive sizing. Let the browser
+   hyphenate them (lang="de" is set on <html>) or break at any point as a
+   last resort. */
+h1, h2, h3 {
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Hide scrollbar for horizontal scroll gallery */
@@ -257,12 +270,16 @@ select.form-input {
 /* Chromium aligns overflowing single-line text to the inline-start edge
    under text-align:center. Flex with align-items:center restores symmetric
    overflow for large headings (e.g. the hero "DIENSTLEISTUNGEN" and the
-   CTA "INDUSTRIEUNTERSTÜTZUNG?" lines that exceed their container width). */
-.text-center > h1,
-.text-center > h2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+   CTA "INDUSTRIEUNTERSTÜTZUNG?" lines that exceed their container width).
+   Only apply this on ≥640px — below that we want the text to wrap to fit
+   the narrow viewport, which requires a regular block container. */
+@media (min-width: 640px) {
+  .text-center > h1,
+  .text-center > h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* ==========================================================================
